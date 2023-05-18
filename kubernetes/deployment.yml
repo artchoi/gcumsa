@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: InHello
-          image: username/InHello:latest
+          image: artchoi0g/inhello:latest
           ports:
             - containerPort: 8080
           readinessProbe:
@@ -58,7 +58,7 @@ spec:
     spec:
       containers:
         - name: OutHello
-          image: username/OutHello:latest
+          image: artchoi/outhello:latest
           ports:
             - containerPort: 8080
           readinessProbe:
