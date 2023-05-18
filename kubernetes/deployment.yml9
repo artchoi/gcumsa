@@ -3,21 +3,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: InHello
+  name: inhello
   labels:
-    app: InHello
+    app: inhello
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: InHello
+      app: inhello
   template:
     metadata:
       labels:
-        app: InHello
+        app: inhello
     spec:
       containers:
-        - name: InHello
+        - name: inhello
           image: artchoi0g/inhello:latest
           ports:
             - containerPort: 8080
@@ -43,21 +43,21 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: OutHello
+  name: outhello
   labels:
-    app: OutHello
+    app: outhello
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: OutHello
+      app: outhello
   template:
     metadata:
       labels:
-        app: OutHello
+        app: outhello
     spec:
       containers:
-        - name: OutHello
+        - name: outhello
           image: artchoi/outhello:latest
           ports:
             - containerPort: 8080
@@ -85,15 +85,15 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: InHello
+  name: inhello
   labels:
-    app: InHello
+    app: inhello
 spec:
   ports:
     - port: 8080
       targetPort: 8080
   selector:
-    app: InHello
+    app: inhello
 
 
 ---
@@ -102,13 +102,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: OutHello
+  name: outhello
   labels:
-    app: OutHello
+    app: outhello
 spec:
   ports:
     - port: 8080
       targetPort: 8080
   selector:
-    app: OutHello
+    app: outhello
 
