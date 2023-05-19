@@ -1,5 +1,12 @@
 server:
   port: 8080
+feign:
+  hystrix:
+    enabled: true
+hystrix:
+  command:
+    default:
+      execution.isolation.thread.timeoutInMilliseconds: 500
 spring:
   application:
     name: inhello
@@ -39,6 +46,10 @@ logging:
     org.hibernate.type: trace
     org.springframework.cloud: debug
 
+api:
+  url:
+    InHello: localhost:8081
+
 
 server:
   port: 8081
@@ -68,5 +79,9 @@ spring:
         event-out:
           destination: gcumsa
           contentType: application/json
+
+api:
+  url:
+    InHello:8080
 
 
