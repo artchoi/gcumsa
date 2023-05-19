@@ -1,7 +1,7 @@
 package gcumsa.domain;
 
 import gcumsa.InHelloApplication;
-import gcumsa.domain.Hello;
+import gcumsa.domain.Hellod;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.*;
@@ -20,12 +20,18 @@ public class Hello {
 
     @PostPersist
     public void onPostPersist() {
-        Hello hello = new Hello(this);
-        hello.publishAfterCommit();
+        Hellod hellod = new Hellod(this);
+        hellod.publishAfterCommit();
     }
 
     @PrePersist
-    public void onPrePersist() {}
+    public void onPrePersist() {
+        // Get request from Hello
+        //gcumsa.external.Hello hello =
+        //    Application.applicationContext.getBean(gcumsa.external.HelloService.class)
+        //    .getHello(/** mapping value needed */);
+
+    }
 
     public static HelloRepository repository() {
         HelloRepository helloRepository = InHelloApplication.applicationContext.getBean(

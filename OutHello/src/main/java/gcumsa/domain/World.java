@@ -1,7 +1,7 @@
 package gcumsa.domain;
 
 import gcumsa.OutHelloApplication;
-import gcumsa.domain.World;
+import gcumsa.domain.Worlded;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.*;
@@ -20,8 +20,8 @@ public class World {
 
     @PostPersist
     public void onPostPersist() {
-        World world = new World(this);
-        world.publishAfterCommit();
+        Worlded worlded = new Worlded(this);
+        worlded.publishAfterCommit();
     }
 
     public static WorldRepository repository() {

@@ -24,11 +24,13 @@ public class PolicyHandler {
 
     @StreamListener(
         value = KafkaProcessor.INPUT,
-        condition = "headers['type']=='Hello'"
+        condition = "headers['type']=='Hellod'"
     )
-    public void wheneverHello_Helloworld(@Payload Hello hello) {
-        Hello event = hello;
-        System.out.println("\n\n##### listener Helloworld : " + hello + "\n\n");
+    public void wheneverHellod_Helloworld(@Payload Hellod hellod) {
+        Hellod event = hellod;
+        System.out.println(
+            "\n\n##### listener Helloworld : " + hellod + "\n\n"
+        );
         // Sample Logic //
 
     }
